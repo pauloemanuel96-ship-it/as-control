@@ -1,0 +1,20 @@
+{
+  "name": "as-control",
+  "version": "2.0.0",
+  "private": true,
+  "description": "AS Control — gestão de despesas recorrentes, contratos e contas a pagar e demandas jurídicas da AS Brasil",
+  "main": "server/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --watch --disable-warning=ExperimentalWarning server/index.js",
+    "jobs": "node --disable-warning=ExperimentalWarning server/run-jobs.js"
+  },
+  "dependencies": {
+    "express": "4.22.3",
+    "multer": "2.5.0"
+  }
+}
