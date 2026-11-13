@@ -17,6 +17,7 @@ const multer = require('multer');
 const A = require('./auth');
 const { HttpError } = require('./util');
 const { iniciarAgendador } = require('./jobs');
+const { iniciarBackupAutomatico } = require('./backup');
 const cobrancas = require('./routes/cobrancas');
 const sistema = require('./routes/sistema');
 
@@ -65,4 +66,5 @@ const PORTA = Number(process.env.PORT || 3000);
 app.listen(PORTA, () => {
   console.log(`AS Control rodando em http://localhost:${PORTA}`);
   if (process.env.DISABLE_JOBS !== 'true') iniciarAgendador();
+  iniciarBackupAutomatico();
 });

@@ -110,6 +110,15 @@ Content-Type: application/json
 ```
 A cobrança entra na fila **Cobranças recebidas** e notifica quem confere. Ela nunca vira pagamento sozinha.
 
+## Backup
+
+O servidor faz um backup automático ao iniciar e depois uma vez por dia (enquanto estiver ligado). Também dá para fazer na hora com `npm run backup`.
+
+- Cada backup é uma pasta datada com o banco (`as-control.db`) e os documentos, mais um `LEIA-ME.txt` com o passo a passo de restauração.
+- A cópia do banco é feita com o sistema rodando, sem risco de pegar o arquivo pela metade.
+- Pasta padrão: `backups/` dentro do projeto. Configure `BACKUP_DIR` no `.env` para outra pasta — uma pasta do OneDrive é uma boa escolha, porque o backup fica também fora do computador.
+- São mantidos os 30 backups mais recentes (`BACKUP_KEEP`).
+
 ## Produção
 
 - Use HTTPS, `NODE_ENV=production` e `APP_URL` com o endereço público.

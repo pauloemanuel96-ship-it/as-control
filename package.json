@@ -11,7 +11,8 @@
   "scripts": {
     "start": "node --disable-warning=ExperimentalWarning server/index.js",
     "dev": "node --watch --disable-warning=ExperimentalWarning server/index.js",
-    "jobs": "node --disable-warning=ExperimentalWarning server/run-jobs.js"
+    "jobs": "node --disable-warning=ExperimentalWarning server/run-jobs.js",
+    "backup": "node --disable-warning=ExperimentalWarning server/backup.js"
   },
   "dependencies": {
     "express": "4.22.3",
