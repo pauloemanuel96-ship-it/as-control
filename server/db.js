@@ -1,4 +1,5 @@
 'use strict';
+require('./env');
 // Banco de dados SQLite nativo do Node (node:sqlite) — sem dependências nativas para compilar.
 const path = require('node:path');
 const fs = require('node:fs');

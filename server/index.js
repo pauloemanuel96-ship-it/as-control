@@ -1,16 +1,8 @@
 'use strict';
 process.env.TZ = 'America/Sao_Paulo';
 const path = require('node:path');
-const fs = require('node:fs');
 
-// Carrega .env simples (sem dependência externa)
-const envFile = path.join(__dirname, '..', '.env');
-if (fs.existsSync(envFile)) {
-  for (const linha of fs.readFileSync(envFile, 'utf8').split(/\r?\n/)) {
-    const m = linha.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
-    if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
-  }
-}
+require('./env');
 
 const express = require('express');
 const multer = require('multer');
